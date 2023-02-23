@@ -1,9 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Hello</title>
+        <title>Sang Le</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            @keyframes moveLeft {
+                0% {
+                    left:50%
+                }
+                100% {
+                    left: 10%
+                }
+            }
+            
+            @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+            html, body {
+                font-family: 'Roboto', sans-serif;
+                margin: 0;
+                padding: 0;
+                
+            }
+
+            body {
+                overflow-y: hidden;
+            }
+
+            .scroller {
+                height: 100vh;
+                overflow-y: scroll;
+                scroll-snap-type: y proximity;
+            }
+
+            .scroller > section {
+                
+                margin-left: 10%;
+                margin-right: 10%;
+                height: 92%;
+                scroll-snap-align: start;
+            }
+
+            #Welcome {
+                font-size: 40px;
+                background-color: rgba(173, 216, 230, 0.37);
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+        </style>
+        <script>
+
+        </script>
     </head>
     <body>
-        <h1>Hello, World2!</h1>
+        <article class="scroller">
+            <section id="Welcome">
+                <h1>Welcome to my Website!</h1>
+            </section>
+            <section>
+            <h1>About Me:</h1>
+            I am a student at the University of South Florida currently majoring in Computer Science.
+            I am currently a senior and plan to graduate soon in the Fall semester of 2023. I started coding with Java around the Sophomore year of Highschool 
+            and continued to enjoy coding since then. 
+            </section>
+            
+            <section>
+            <h1>Betting and Selling Game Store</h1>
+            The Betting and Selling Game Store was a project created in a three person team as an end of term project for my database class. The idea of this 
+            project was to allow users of our website the ability to bid and sell games and other merchadise to other users in the website. 
+            These items would be stored into a database, which for our project was PostgreSQL. 
+            Here are more features our team implemented for the project:
+            <ul>
+                <li>Accounts - Our website supports creating accounts and storing the into a table in the database. Our backend of the system would not allow accounts with duplicate emails to be formed. </li>
+                <li>Sessions - User's session are tracked and allowed 10 minutes per session. User's are allowed to close and come back to our website and do not have to log back in again. After 10 minutes, users will have to log back in.</li>
+                <li>Permissions - Our website has three different levels of permissions enforced by our backend as well as PostgreSQL permissions:
+                    <ol>
+                        <li>Viewer - Viewers are allow to look at the items and create an account, but are not allowed to bid, sell, or access our account profile.</li>
+                        <li>User-Account - Users are allow to bid, sell, logout, create an account, access and change profile, but are not allowed to access logged information.</li>
+                        <li>Employee-Account - Employees are allowed to delete items from the database which is meant to indicate sales, view account info, logout, and create an account. They are not allowed to sell and bid.  </li>
+                    </ol>
+                </li>
+                <li>Logging Transactions - Every item is associated with a sell ID, and if bought, is listed with the buyer ID. Each time a user places a bid or sells, a seperate</li>
+                    database table is will record the action. 
+            </ul>
+            </section>
+            <section>
+                Test
+            </section>
+        </article>
+        
+
     </body>
 </html>

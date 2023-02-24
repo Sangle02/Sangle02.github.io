@@ -6,13 +6,39 @@
         <style>
             @keyframes moveLeft {
                 0% {
-                    left:50%
+                    left:0px
                 }
                 100% {
-                    left: 10%
+                    top:300px;
+                    left:0px;
                 }
             }
             
+            @keyframes animate {
+            0% {
+            }
+            100% {
+                top:300px;
+            }
+            }
+
+            @keyframes animate2 {
+                0% {
+                }
+                100% {
+                top:-300px;
+                
+                }
+            }
+
+            @keyframes animate3 {
+            0% {
+            }
+            100% {
+                left:-300px;
+                
+            }
+}
             @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
             html, body {
@@ -32,21 +58,143 @@
                 scroll-snap-type: y proximity;
             }
 
-            .scroller > section {
+            
+            .scroller > .project {
                 
                 margin-left: 10%;
                 margin-right: 10%;
-                height: 92%;
+                height: 94%;
                 scroll-snap-align: start;
             }
 
             #Welcome {
+                margin-left: 10%;
+                margin-right: 10%;
+                height: 94%;
                 font-size: 40px;
                 background-color: rgba(173, 216, 230, 0.37);
                 align-items: center;
                 justify-content: center;
                 text-align: center;
             }
+
+            #About {
+                height: 94%;
+            }
+
+            .wrapper {
+                position: relative;
+                
+            }
+           
+
+            .img-area {
+                position:relative;
+                
+                height: 100px;
+                width: 100px;
+            }
+
+            .img-area2 {
+                position:relative;
+                
+                height: 100px;
+                width: 100px;
+            }
+            
+            .img-box {
+                
+                padding: 10px;
+                z-index: 200;
+                background-color: #ffffff;
+                width: 500px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                box-shadow: 0 0 1px 0 #333;
+                border: 1px solid #333;
+                transition: .5s;
+            }
+            
+            
+            .img-box2 {
+                padding: 10px;
+                z-index: 200;
+                background-color: #ffffff;
+                width: 500px;
+                position: absolute;
+                top: 0;
+                left: 100vh;
+                box-shadow: 0 0 1px 0 #333;
+                border: 1px solid #333;
+                transition: .5s;
+            }
+            
+            .img-area:hover .box-1{
+                transform: rotate(-0.1deg);
+                top:500px;
+                left:0;
+                width: 300px;
+            }
+
+            .img-area:hover .box-2{
+                transform: rotate(0.1deg);
+                top:250px;
+                left:0;
+                width: 300px;
+            }
+
+            .img-area:hover .box-3{
+                top:0px;
+                left:0;
+                width: 300px;
+            }
+            
+
+            .img-area2:hover .box-1{
+                transform: rotate(-0.1deg);
+                top:260px;
+                left:100vh;
+                width: 500px;
+                height: 250px;
+            }
+
+            .img-area2:hover .box-2{
+                transform: rotate(0.1deg);
+                top:-260px;
+                left:100vh;
+                width: 500px;
+                height: 250px;
+            }
+
+            .img-area2:hover .box-3{
+                
+                top:0px;
+                left:100vh;
+                width: 500px;
+                height: 250px;
+            }
+
+            .img-area2 .box-1 {
+                transform: rotate(5deg);
+
+            }
+
+            .img-area2 .box-2 {
+                transform: rotate(-5deg);
+                
+            }
+            
+            .img-area .box-1 {
+                transform: rotate(5deg);
+
+            }
+
+            .img-area .box-2 {
+                transform: rotate(-5deg);
+                
+            }
+            
         </style>
         <script>
 
@@ -55,20 +203,20 @@
     <body>
         <article class="scroller">
             <section id="Welcome">
-                <h1>Welcome to my Website!</h1>
+                <h1>Welcome!</h1>
             </section>
-            <section>
+            <section id="About">
             <h1>About Me:</h1>
             I am a student at the University of South Florida currently majoring in Computer Science.
             I am currently a senior and plan to graduate soon in the Fall semester of 2023. I started coding with Java around the Sophomore year of Highschool 
             and continued to enjoy coding since then. 
             </section>
             
-            <section>
+            <section class = "project">
             <h1>Betting and Selling Game Store</h1>
             The Betting and Selling Game Store was a project created in a three person team as an end of term project for my database class. The idea of this 
             project was to allow users of our website the ability to bid and sell games and other merchadise to other users in the website. 
-            These items would be stored into a database, which for our project was PostgreSQL. 
+            These items would be stored into a database. 
             Here are more features our team implemented for the project:
             <ul>
                 <li>Accounts - Our website supports creating accounts and storing the into a table in the database. Our backend of the system would not allow accounts with duplicate emails to be formed. </li>
@@ -83,9 +231,30 @@
                 <li>Logging Transactions - Every item is associated with a sell ID, and if bought, is listed with the buyer ID. Each time a user places a bid or sells, a seperate</li>
                     database table is will record the action. 
             </ul>
+            <div class="wrapper">
+                <div class = "img-area2">
+                    <img src="static/EER diagram.png" alt="EER diagram" class="img-box2 box-1">
+                    <img src="static/item-page.png" alt="item-page" class="img-box2 box-2">
+                    <img src="static/Sign-up-page.png" alt="signup-page" class="img-box2 box-3">
+                </div>
+            </div>
+            
             </section>
-            <section>
-                Test
+            <section class = "project">
+            <h1>Facial Biometric Recognition System</h1>
+            The facial biometric recognition system was an end of term class project created for my mobile biometric system class. The idea of the system
+            was to obtain a database of facial pictures to test from. This information was primary obtained from daily selfies from the class that semester.
+            The system would first extract features from those pictures, the features selected from this system was 68 landmarks on the face. Some of these extracted features
+            were stored into a template database to test while the rest were used to train selected classifiers to increase accuracy of positive matches. The results of the system
+            form multiple types of graphs.
+            <div class="wrapper">
+                <div class = "img-area">
+                    <img src="static/Accesories DET Curve Linear.png" alt="DET Curve" class="img-box box-1">
+                    <img src="static/Accessories Linear Score Dist.png" alt="Linear" class="img-box box-2">
+                    <img src="static/Accessories Poly Score Dist.png" alt="Poly" class="img-box box-3">
+                </div>
+            </div>
+            
             </section>
         </article>
         

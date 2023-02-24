@@ -4,43 +4,17 @@
         <title>Sang Le</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-            @keyframes moveLeft {
-                0% {
-                    left:0px
-                }
-                100% {
-                    top:300px;
-                    left:0px;
-                }
-            }
             
-            @keyframes animate {
-            0% {
-            }
-            100% {
-                top:300px;
-            }
-            }
-
-            @keyframes animate2 {
-                0% {
-                }
-                100% {
-                top:-300px;
-                
-                }
-            }
-
-            @keyframes animate3 {
-            0% {
-            }
-            100% {
-                left:-300px;
-                
-            }
-}
             @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
+            h1 {
+                text-align: center;
+            }
+
+            #contact {
+                text-align: center;
+                margin-bottom: 50px;
+            }
             html, body {
                 font-family: 'Roboto', sans-serif;
                 margin: 0;
@@ -58,28 +32,57 @@
                 scroll-snap-type: y proximity;
             }
 
-            
+            #Future {
+                font-size: 20px;
+                margin-left: 10%;
+                margin-right: 10%;
+                height: 94%; 
+            }
             .scroller > .project {
                 
                 margin-left: 10%;
                 margin-right: 10%;
-                height: 94%;
+                height: 94%;  
                 scroll-snap-align: start;
+                
             }
-
+            
             #Welcome {
+                
                 margin-left: 10%;
                 margin-right: 10%;
-                height: 94%;
-                font-size: 40px;
+                height: 80%;
+                font-size: 80px;
                 background-color: rgba(173, 216, 230, 0.37);
-                align-items: center;
-                justify-content: center;
-                text-align: center;
+                
+            }
+
+            #Welcome > h1 {
+                padding:300px;
+
             }
 
             #About {
+                font-size: 20px;
+                
                 height: 94%;
+                margin-top: 50px;
+                margin-right:20%;
+                margin-left:20%;
+                
+                
+            }
+
+            #About > div {
+                padding: 35px;
+                border: black solid;
+                padding-bottom:50px;
+            }
+            
+
+            .pRight {
+                margin-left: 40%;
+                margin-right:15%;
             }
 
             .wrapper {
@@ -110,7 +113,7 @@
                 width: 500px;
                 position: absolute;
                 top: 0;
-                left: 0;
+                left: 10%;
                 box-shadow: 0 0 1px 0 #333;
                 border: 1px solid #333;
                 transition: .5s;
@@ -132,37 +135,37 @@
             
             .img-area:hover .box-1{
                 transform: rotate(-0.1deg);
-                top:500px;
-                left:0;
-                width: 300px;
+                top:360px;
+                left:50px;
+                width: 350px;
             }
 
             .img-area:hover .box-2{
                 transform: rotate(0.1deg);
-                top:250px;
-                left:0;
-                width: 300px;
+                top:80px;
+                left:-20px;
+                width: 350px;
             }
 
             .img-area:hover .box-3{
-                top:0px;
-                left:0;
-                width: 300px;
+                top:-200px;
+                left:50px;
+                width: 350px;
             }
             
 
             .img-area2:hover .box-1{
                 transform: rotate(-0.1deg);
                 top:260px;
-                left:100vh;
+                left:50vh;
                 width: 500px;
                 height: 250px;
             }
 
             .img-area2:hover .box-2{
                 transform: rotate(0.1deg);
-                top:-260px;
-                left:100vh;
+                top:20px;
+                left:0vh;
                 width: 500px;
                 height: 250px;
             }
@@ -206,14 +209,20 @@
                 <h1>Welcome!</h1>
             </section>
             <section id="About">
+            <div>
             <h1>About Me:</h1>
-            I am a student at the University of South Florida currently majoring in Computer Science.
-            I am currently a senior and plan to graduate soon in the Fall semester of 2023. I started coding with Java around the Sophomore year of Highschool 
-            and continued to enjoy coding since then. 
+            My name is Sang Le and I am a student at the University of South Florida currently majoring in Computer Science. 
+            I am currently a senior and plan to graduate in the Fall semester of 2023. I started coding with Java around the Sophomore year of Highschool 
+            and continued to enjoy coding since then. I have since learned more about coding and learnt languages such as C, C++, Python. 
+            I enjoyed coding in Python the most since it feels the most intuitive. 
+            </div>
+            
             </section>
             
             <section class = "project">
             <h1>Betting and Selling Game Store</h1>
+            <p>
+            
             The Betting and Selling Game Store was a project created in a three person team as an end of term project for my database class. The idea of this 
             project was to allow users of our website the ability to bid and sell games and other merchadise to other users in the website. 
             These items would be stored into a database. 
@@ -231,6 +240,7 @@
                 <li>Logging Transactions - Every item is associated with a sell ID, and if bought, is listed with the buyer ID. Each time a user places a bid or sells, a seperate</li>
                     database table is will record the action. 
             </ul>
+            </p>
             <div class="wrapper">
                 <div class = "img-area2">
                     <img src="static/EER diagram.png" alt="EER diagram" class="img-box2 box-1">
@@ -240,13 +250,17 @@
             </div>
             
             </section>
+            
             <section class = "project">
             <h1>Facial Biometric Recognition System</h1>
+            <p class ="pRight"> 
             The facial biometric recognition system was an end of term class project created for my mobile biometric system class. The idea of the system
             was to obtain a database of facial pictures to test from. This information was primary obtained from daily selfies from the class that semester.
             The system would first extract features from those pictures, the features selected from this system was 68 landmarks on the face. Some of these extracted features
             were stored into a template database to test while the rest were used to train selected classifiers to increase accuracy of positive matches. The results of the system
             form multiple types of graphs.
+            </p>
+            
             <div class="wrapper">
                 <div class = "img-area">
                     <img src="static/Accesories DET Curve Linear.png" alt="DET Curve" class="img-box box-1">
@@ -255,6 +269,27 @@
                 </div>
             </div>
             
+            </section>
+            
+            <section id="Future">
+                <div>
+                  <h1>Current/Future Projects:</h1> 
+                  <ul>
+                    <li>Currently, I am working on this website and learning more about HTML, CSS, and JavaScript. I plan to edit, create more interesting features, 
+                     and add more quality of life changes to the website for better accessibilities as I learned more about these languages.</li>
+                    <li>I also have plans on creating a Discord Bot similar in feature to the online game TypeRacer. The bot would have access towards a database that contains a few hundred sentences.
+                        Once the user issues a command to the bot, the bot would randomly select a sentence and time the player. The bot would count up to 3 minutes for the player to complete the sentence.
+                        If there are any mistakes in the sentence, the player time would not be recorded. Else, the time would be recorded for that sentence and calculated for the words per minute (WPM).
+                        If the time is up, the sentence is automatically not be accepted. The bot would store the average WPM of the user who issued commands to the bot and print them to the server when asked.
+                    </li>
+                  </ul>
+                  
+                </div>
+                
+            </section>
+            <section id="contact">
+                <h1>Contact: </h1>
+                <div>Email: sangle1@usf.edu </div>
             </section>
         </article>
         

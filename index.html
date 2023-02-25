@@ -3,9 +3,13 @@
     <head>
         <title>Sang Le</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
         <style>
             
             @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+            
             /*Entire Body*/
             
             body {
@@ -15,6 +19,14 @@
                 margin: 0;
                 padding: 0;
                 overflow-y: hidden;
+            }
+            
+            p, li {
+                font-size:19x;
+            }
+
+            #contact > div {
+                font-size:19x;
             }
             /*Welcome, About, Etc */
             h1 {
@@ -68,20 +80,25 @@
                 scroll-snap-type: y proximity;
             }
             .scroller > .project {   
-                            
+                
                 margin-left: 10%;
                 border: tan solid;
                 margin-right: 10%;
                 height: 94%;  
                 scroll-snap-align: start;                  
             }
+            
             #Future {
-                font-size: 20px;
+                
                 margin-left: 10%;
                 margin-right: 10%;
                 height: 94%; 
             }
+
+            
+
             .pRight {
+                
                 margin-left: 40%;
                 margin-right:15%;
             }
@@ -172,16 +189,20 @@
             }
 
             .img-area2 .box-1:hover {
+                
                 transform: scale(1.5);
+                top:70px;
                 z-index: 55555 !important;
             }
 
             .img-area2 .box-2:hover {
+                top:7vh;
                 transform: scale(1.5);
                 z-index: 55555 !important;
             }
 
             .img-area2 .box-3:hover {
+                top:5vh;
                 transform: scale(1.5);
                 z-index: 55555 !important;
             }
@@ -209,7 +230,7 @@
                 z-index: 3;
                 left:92vw;
                 top: 3vw;
-                background-color: orange;
+                background-color: tan;
                 border: black;
                 border-radius: 5rem;
                 
@@ -261,6 +282,12 @@
                 top: 18vw;
             }
 
+            #ContactNav{
+                opacity: 1;
+                left:92vw;
+                top: 23vw;
+            }
+
 
             body:not([data-nav="true"]) > #AboutNav {
                 opacity: 0;
@@ -274,6 +301,12 @@
             }
 
             body:not([data-nav="true"]) > #FutureNav {
+                opacity: 0;
+                transform: rotate(50deg);
+                
+            }
+
+            body:not([data-nav="true"]) > #ContactNav {
                 opacity: 0;
                 transform: rotate(50deg);
                 
@@ -296,11 +329,56 @@
                 transform: rotate(-2deg);
                 
             }
+
+            body[data-nav="true"] > #ContactNav {
+                opacity: 1;
+                transform: rotate(-2deg);
+                
+            }
+            
+            #navigator > i {
+                color:white;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 1.75rem;
+                opacity: 0;
+            }
+
+            body:not([data-nav="true"]) > #navigator > .open {
+                opacity: 1;
+                
+            }
+            body[data-nav="true"] > #navigator > .close {
+                opacity: 1;
+                
+            }
+
+            #Up {
+                height: 6vh;
+                width: 3vw;
+                position: relative;
+                z-index: 3;
+                left:92.7vw;
+                top: 3vw;
+                margin-bottom: 10vh;
+                background-color: tan;
+                border: black;
+                border-radius: 5rem;
+                cursor: pointer;
+                
+            }
+
+            #Up > * {
+                font-size: 25px;
+                color: white;
+            }
         </style>
 
             
         <script>
-            
+           
 
             const toggleNav = () => {
                 if(document.body.dataset.nav === "true") {
@@ -318,6 +396,9 @@
                     document.querySelector('#ProjectsNav').style.cursor = "pointer";
                     document.querySelector('#FutureNav').disabled = false;
                     document.querySelector('#FutureNav').style.cursor = "pointer";
+                    document.querySelector('#ContactNav').disabled = false;
+                    document.querySelector('#ContactNav').style.cursor = "pointer";
+                    
 
                 }
                 document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";
@@ -331,6 +412,8 @@
                 document.querySelector('#ProjectsNav').style.cursor = "default";
                 document.querySelector('#FutureNav').disabled = true;
                 document.querySelector('#FutureNav').style.cursor = "default";
+                document.querySelector('#ContactNav').disabled = true;
+                document.querySelector('#ContactNav').style.cursor = "default"
                 document.querySelector("#AboutNav").onclick = () => {
                     document.getElementById('About').scrollIntoView({behavior:"smooth"});
                     }
@@ -343,15 +426,31 @@
                 document.querySelector("#AboutNav").onclick = () => {
                     document.getElementById('About').scrollIntoView({behavior:"smooth"});
                     }
+                document.querySelector("#ContactNav").onclick = () => {
+                    document.getElementById('contact').scrollIntoView({behavior:"smooth"});
+                    }
+                document.querySelector("#Up").onclick = () => {
+                    document.getElementById('Welcome').scrollIntoView({behavior:"smooth", block: "end"});
+                    }
                 });
+            
             
         </script>
     </head>
     <body data-nav="false">
-        <button id="navigator" type="button" onclick="toggleNav()" ></button>
+        
+
+        <button id="navigator" type="button" onclick="toggleNav()" >
+            <i class="open fa fa-bars"></i>
+            <i class="close fa fa-angle-up"></i>
+        </button>
         <button id="ProjectsNav" type="button" class="NavItem">Projects</button>
         <button id="AboutNav" type="button" class="NavItem">About Me</button>
         <button id="FutureNav" type="button" class="NavItem">Future Plans</button>
+        <button id="ContactNav" type="button" class="NavItem">Contact Me</button>
+
+        
+        
         
         <article class="scroller">
             <section id="Welcome">
@@ -368,11 +467,10 @@
             
             </section>
             
-            <div id="projectsTitle">Projects:</div>
+            <div id="projectsTitle"><h1>Projects:</h1></div>
             <section class = "project">
             <h1>Betting and Selling Game Store</h1>
             <p>
-            
             The Betting and Selling Game Store was a project created in a three person team as an end of term project for my database class. The idea of this 
             project was to allow users of our website the ability to bid and sell games and other merchadise to other users in the website. 
             These items would be stored into a database. 
@@ -441,8 +539,13 @@
                 <h1>Contact: </h1>
                 <div>Email: sangle1@usf.edu </div>
             </section>
+            <button id="Up" type="button">
+                <i class="fa fa-arrow-up"></i>
+            </button>
+
         </article>
         
 
     </body>
+    
 </html>

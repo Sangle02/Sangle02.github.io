@@ -6,7 +6,17 @@
         <style>
             
             @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
-
+            /*Entire Body*/
+            
+            body {
+                background-color: black;
+                color: white;
+                font-family: 'Roboto', sans-serif;
+                margin: 0;
+                padding: 0;
+                overflow-y: hidden;
+            }
+            /*Welcome, About, Etc */
             h1 {
                 text-align: center;
             }
@@ -15,53 +25,21 @@
                 text-align: center;
                 margin-bottom: 50px;
             }
-            html, body {
-                font-family: 'Roboto', sans-serif;
-                margin: 0;
-                padding: 0;
-                
-            }
 
-            body {
-                overflow-y: hidden;
-            }
-
-            .scroller {
-                height: 100vh;
-                overflow-y: scroll;
-                scroll-snap-type: y proximity;
-            }
-
-            #Future {
-                font-size: 20px;
-                margin-left: 10%;
-                margin-right: 10%;
-                height: 94%; 
-            }
-            .scroller > .project {
-                
-                margin-left: 10%;
-                margin-right: 10%;
-                height: 94%;  
-                scroll-snap-align: start;
-                
-            }
-            
             #Welcome {
                 
-                margin-left: 10%;
-                margin-right: 10%;
-                height: 80%;
+                margin-left: 10% solid;
+                margin-right: 10% solid;
+                height: 85%;
                 font-size: 80px;
-                background-color: rgba(173, 216, 230, 0.37);
+                background-color: rgba(10, 194, 255, 0.37);
                 
             }
-
             #Welcome > h1 {
-                padding:300px;
+                    padding:300px;
 
             }
-
+            
             #About {
                 font-size: 20px;
                 
@@ -72,39 +50,57 @@
                 
                 
             }
-
+            
             #About > div {
                 padding: 35px;
-                border: black solid;
+                border: tan solid;
                 padding-bottom:50px;
             }
             
-
+            #projectsTitle {
+                text-align: center;
+                font-size: 30px;
+            }
+            /*Menu of Sections*/
+            .scroller {
+                height: 100vh;
+                overflow-y: scroll;
+                scroll-snap-type: y proximity;
+            }
+            .scroller > .project {   
+                            
+                margin-left: 10%;
+                border: tan solid;
+                margin-right: 10%;
+                height: 94%;  
+                scroll-snap-align: start;                  
+            }
+            #Future {
+                font-size: 20px;
+                margin-left: 10%;
+                margin-right: 10%;
+                height: 94%; 
+            }
             .pRight {
                 margin-left: 40%;
                 margin-right:15%;
             }
-
             .wrapper {
                 position: relative;
                 
             }
-           
-
             .img-area {
                 position:relative;
                 
                 height: 100px;
                 width: 100px;
             }
-
             .img-area2 {
                 position:relative;
                 
                 height: 100px;
                 width: 100px;
-            }
-            
+            }           
             .img-box {
                 
                 padding: 10px;
@@ -113,13 +109,12 @@
                 width: 500px;
                 position: absolute;
                 top: 0;
-                left: 10%;
+                left: 25%;
                 box-shadow: 0 0 1px 0 #333;
                 border: 1px solid #333;
                 transition: .5s;
-            }
-            
-            
+                
+            }           
             .img-box2 {
                 padding: 10px;
                 z-index: 200;
@@ -131,83 +126,233 @@
                 box-shadow: 0 0 1px 0 #333;
                 border: 1px solid #333;
                 transition: .5s;
-            }
-            
+            }          
             .img-area:hover .box-1{
                 transform: rotate(-0.1deg);
                 top:360px;
                 left:50px;
                 width: 350px;
             }
-
             .img-area:hover .box-2{
                 transform: rotate(0.1deg);
                 top:80px;
-                left:-20px;
+                left:5px;
                 width: 350px;
             }
-
             .img-area:hover .box-3{
                 top:-200px;
                 left:50px;
                 width: 350px;
             }
-            
-
             .img-area2:hover .box-1{
                 transform: rotate(-0.1deg);
                 top:260px;
                 left:50vh;
                 width: 500px;
                 height: 250px;
+                cursor: pointer;
+                
             }
-
             .img-area2:hover .box-2{
                 transform: rotate(0.1deg);
                 top:20px;
-                left:0vh;
+                left:5vh;
                 width: 500px;
                 height: 250px;
-            }
-
-            .img-area2:hover .box-3{
+                cursor: pointer;
                 
+            }
+            .img-area2:hover .box-3{               
                 top:0px;
                 left:100vh;
                 width: 500px;
                 height: 250px;
+                cursor: pointer;
+                
             }
+
+            .img-area2 .box-1:hover {
+                transform: scale(1.5);
+                z-index: 55555 !important;
+            }
+
+            .img-area2 .box-2:hover {
+                transform: scale(1.5);
+                z-index: 55555 !important;
+            }
+
+            .img-area2 .box-3:hover {
+                transform: scale(1.5);
+                z-index: 55555 !important;
+            }
+
 
             .img-area2 .box-1 {
                 transform: rotate(5deg);
-
+                image-rendering: smooth;
+                
             }
-
             .img-area2 .box-2 {
                 transform: rotate(-5deg);
-                
             }
-            
             .img-area .box-1 {
                 transform: rotate(5deg);
-
             }
-
             .img-area .box-2 {
                 transform: rotate(-5deg);
-                
             }
             
-            #projectsTitle {
-                text-align: center;
-                font-size: 30px;
+            #navigator {
+                height: 8vh;
+                width: 4vw;
+                position: fixed;
+                z-index: 3;
+                left:92vw;
+                top: 3vw;
+                background-color: orange;
+                border: black;
+                border-radius: 5rem;
+                
+                cursor: pointer;
+                transition: transform, background-color;
+                transition-timing-function: ease;
+                transition-duration: 400ms;
+
+            }
+
+            #navigator:hover {
+                transform: scale(1.1);
+            }
+
+            #navigator:active {
+                transform: scale(0.95);
+            }
+
+            .NavItem {
+                font-size: 20px;
+                color: white;
+                height: 6vh;
+                width: 4vw;
+                position: fixed;
+                z-index: 3;
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+                transition: transform, background-color;
+                transition-timing-function: ease;
+                transition-duration: 400ms;
+            }
+
+            #AboutNav {
+                opacity: 1;
+                left:92vw;
+                top: 8vw;
+            }
+
+            #ProjectsNav {
+                opacity: 1;
+                left:92vw;
+                top: 13vw;
+            }
+
+            #FutureNav{
+                opacity: 1;
+                left:92vw;
+                top: 18vw;
+            }
+
+
+            body:not([data-nav="true"]) > #AboutNav {
+                opacity: 0;
+                transform: rotate(50deg);
+            }
+
+            body:not([data-nav="true"]) > #ProjectsNav {
+                opacity: 0;
+                transform: rotate(50deg);
+                
+            }
+
+            body:not([data-nav="true"]) > #FutureNav {
+                opacity: 0;
+                transform: rotate(50deg);
+                
+            }
+
+            body[data-nav="true"]> #AboutNav {
+                opacity: 1;
+                transform: rotate(-2deg);
+                
+            }
+
+            body[data-nav="true"] > #ProjectsNav {
+                opacity: 1;
+                transform: rotate(-2deg);
+                
+            }
+
+            body[data-nav="true"] > #FutureNav {
+                opacity: 1;
+                transform: rotate(-2deg);
+                
             }
         </style>
-        <script>
 
+            
+        <script>
+            
+
+            const toggleNav = () => {
+                if(document.body.dataset.nav === "true") {
+                    document.querySelector('#AboutNav').disabled = true;
+                    document.querySelector('#AboutNav').style.cursor = "default";
+                    document.querySelector('#ProjectsNav').disabled = true;
+                    document.querySelector('#ProjectsNav').style.cursor = "default";
+                    document.querySelector('#FutureNav').disabled = true;
+                    document.querySelector('#FutureNav').style.cursor = "default";
+                }
+                else{
+                    document.querySelector('#AboutNav').disabled = false;
+                    document.querySelector('#AboutNav').style.cursor = "pointer";
+                    document.querySelector('#ProjectsNav').disabled = false;
+                    document.querySelector('#ProjectsNav').style.cursor = "pointer";
+                    document.querySelector('#FutureNav').disabled = false;
+                    document.querySelector('#FutureNav').style.cursor = "pointer";
+
+                }
+                document.body.dataset.nav = document.body.dataset.nav === "true" ? "false" : "true";
+            }
+
+
+            document.addEventListener('DOMContentLoaded', () => {
+                document.querySelector('#AboutNav').disabled = true;
+                document.querySelector('#AboutNav').style.cursor = "default";
+                document.querySelector('#ProjectsNav').disabled = true;
+                document.querySelector('#ProjectsNav').style.cursor = "default";
+                document.querySelector('#FutureNav').disabled = true;
+                document.querySelector('#FutureNav').style.cursor = "default";
+                document.querySelector("#AboutNav").onclick = () => {
+                    document.getElementById('About').scrollIntoView({behavior:"smooth"});
+                    }
+                document.querySelector("#ProjectsNav").onclick = () => {
+                    document.getElementById('projectsTitle').scrollIntoView({behavior:"smooth"});
+                    }
+                document.querySelector("#FutureNav").onclick = () => {
+                    document.getElementById('Future').scrollIntoView({behavior:"smooth"});
+                    }
+                document.querySelector("#AboutNav").onclick = () => {
+                    document.getElementById('About').scrollIntoView({behavior:"smooth"});
+                    }
+                });
+            
         </script>
     </head>
-    <body>
+    <body data-nav="false">
+        <button id="navigator" type="button" onclick="toggleNav()" ></button>
+        <button id="ProjectsNav" type="button" class="NavItem">Projects</button>
+        <button id="AboutNav" type="button" class="NavItem">About Me</button>
+        <button id="FutureNav" type="button" class="NavItem">Future Plans</button>
+        
         <article class="scroller">
             <section id="Welcome">
                 <h1>Welcome!</h1>
@@ -222,6 +367,7 @@
             </div>
             
             </section>
+            
             <div id="projectsTitle">Projects:</div>
             <section class = "project">
             <h1>Betting and Selling Game Store</h1>
@@ -247,9 +393,9 @@
             </p>
             <div class="wrapper">
                 <div class = "img-area2">
-                    <img src="static/EER diagram.png" alt="EER diagram" class="img-box2 box-1">
-                    <img src="static/item-page.png" alt="item-page" class="img-box2 box-2">
-                    <img src="static/Sign-up-page.png" alt="signup-page" class="img-box2 box-3">
+                    <img src="static/EER diagram.jpg" alt="EER diagram" class="img-box2 box-1">
+                    <img src="static/item-page.jpg" alt="item-page" class="img-box2 box-2">
+                    <img src="static/Sign-up-page.jpg" alt="signup-page" class="img-box2 box-3">
                 </div>
             </div>
             

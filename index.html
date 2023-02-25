@@ -64,6 +64,7 @@
             }
             
             #About > div {
+                text-align: center;
                 padding: 35px;
                 border: tan solid;
                 padding-bottom:50px;
@@ -146,18 +147,18 @@
             }          
             .img-area:hover .box-1{
                 transform: rotate(-0.1deg);
-                top:270px;
+                top:28 0px;
                 left:50px;
                 width: 350px;
             }
             .img-area:hover .box-2{
                 transform: rotate(0.1deg);
-                top:-10px;
+                top:0px;
                 left:5px;
                 width: 350px;
             }
             .img-area:hover .box-3{
-                top:-285px;
+                top:-265px;
                 left:50px;
                 width: 350px;
             }
@@ -459,10 +460,11 @@
             <section id="About">
             <div>
             <h1>About Me:</h1>
-            My name is Sang Le and I am a student at the University of South Florida currently majoring in Computer Science. 
-            I am currently a senior and plan to graduate in the Fall semester of 2023. I started coding with Java around the Sophomore year of Highschool 
-            and continued to enjoy coding since then. I have since learned more about coding and learnt languages such as C, C++, Python. 
-            I enjoyed coding in Python the most since it feels the most intuitive. 
+            
+            Currently a senior at the University of South Florida in the Department of Computer Science and Engineering. <br>
+            Began coding with Java around the Sophomore year of Highschool to learning skills such as C, C++, Python, SQL, HTML/CSS, etc from college. <br>
+            I have an interest towards game design and development. I enjoy many different types of games but hope to help develop a RPG game in the future. <br> 
+            I also have an interest towards computer animation. I enjoy watching and developing animations. For my computer animation class, I helped create an animation focused about penguins using MAYA. <br>
             </div>
             
             </section>
@@ -471,22 +473,22 @@
             <section class = "project">
             <h1>Betting and Selling Game Store</h1>
             <p>
-            The Betting and Selling Game Store was a project created in a three person team as an end of term project for my database class. The idea of this 
-            project was to allow users of our website the ability to bid and sell games and other merchadise to other users in the website. 
-            These items would be stored into a database. 
+            The Betting and Selling Game Store was a project created by a three-person team as an end-of-term project for my database class. The idea of this 
+            project was to allow users of our website the ability to bid and sell games and other merchandise to other users of the website. 
+            These items would be stored in a database. 
             Here are more features our team implemented for the project:
             <ul>
-                <li>Accounts - Our website supports creating accounts and storing the into a table in the database. Our backend of the system would not allow accounts with duplicate emails to be formed. </li>
-                <li>Sessions - User's session are tracked and allowed 10 minutes per session. User's are allowed to close and come back to our website and do not have to log back in again. After 10 minutes, users will have to log back in.</li>
+                <li>Accounts - Our website supports creating accounts. These accounts would be stored in a table in the database. Our backend of the system would not allow accounts with duplicate emails to be formed. </li>
+                <li>Sessions - User's sessions are tracked and allowed 10 minutes per session. Users are allowed to close and come back to our website and do not have to log back in again. After 10 minutes, users will have to log back in.</li>
                 <li>Permissions - Our website has three different levels of permissions enforced by our backend as well as PostgreSQL permissions:
                     <ol>
-                        <li>Viewer - Viewers are allow to look at the items and create an account, but are not allowed to bid, sell, or access our account profile.</li>
-                        <li>User-Account - Users are allow to bid, sell, logout, create an account, access and change profile, but are not allowed to access logged information.</li>
-                        <li>Employee-Account - Employees are allowed to delete items from the database which is meant to indicate sales, view account info, logout, and create an account. They are not allowed to sell and bid.  </li>
+                        <li>Viewer - Viewers are allowed to look at the items and create an account, but are not allowed to bid, sell, or access our account profile.</li>
+                        <li>User-Account - Users are allowed to bid, sell, log out, create an account, access, and change their profile, but are not allowed to access logged information.</li>
+                        <li>Employee-Account - Employees are allowed to delete items from the database which is meant to indicate sales, view account info, log out, and create an account. They are not allowed to sell and bid.  </li>
                     </ol>
                 </li>
-                <li>Logging Transactions - Every item is associated with a sell ID, and if bought, is listed with the buyer ID. Each time a user places a bid or sells, a seperate</li>
-                    database table is will record the action. 
+                <li>Logging Transactions - Every item is associated with a sell ID, and if bought, is listed with the buyer ID. Each time a user places a bid or sale, a separate
+                    database table will record the action. </li>
             </ul>
             </p>
             <div class="wrapper">
@@ -502,18 +504,17 @@
             <section class = "project">
             <h1>Facial Biometric Recognition System</h1>
             <p class ="pRight"> 
-            The facial biometric recognition system was an end of term class project created for my mobile biometric system class. The idea of the system
-            was to obtain a database of facial pictures to test from. This information was primary obtained from daily selfies from the class that semester.
-            The system would first extract features from those pictures, the features selected from this system was 68 landmarks on the face. Some of these extracted features
-            were stored into a template database to test while the rest were used to train selected classifiers to increase accuracy of positive matches. The results of the system
-            form multiple types of graphs.
+            The facial biometric recognition system was an end-of-term class project created for my mobile biometric system class. The idea of the system
+            was to obtain a database of facial pictures to test from. This information was primarily obtained from daily selfies from the class that semester.
+            The system would first extract features from those pictures, the features selected from this system were 68 landmarks on the face. Some of these extracted features
+            were stored in a template database to test while the rest were used to train selected classifiers to increase the accuracy of positive matches.
             </p>
             
             <div class="wrapper">
                 <div class = "img-area">
                     <img src="static/Accesories DET Curve Linear.png" alt="DET Curve" class="img-box box-1">
                     <img src="static/Accessories Linear Score Dist.png" alt="Linear" class="img-box box-2">
-                    <img src="static/Accessories Poly Score Dist.png" alt="Poly" class="img-box box-3">
+                    <img src="static/Accessories ROC linear.png" alt="Poly" class="img-box box-3">
                 </div>
             </div>
             
@@ -526,11 +527,19 @@
                   <h1>Current/Future Projects:</h1> 
                   <ul>
                     <li>Currently, I am working on this website and learning more about HTML, CSS, and JavaScript. I plan to edit, create more interesting features, 
-                     and add more quality of life changes to the website for better accessibilities as I learned more about these languages.</li>
-                    <li>I also have plans on creating a Discord Bot similar in feature to the online game TypeRacer. The bot would have access towards a database that contains a few hundred sentences.
-                        Once the user issues a command to the bot, the bot would randomly select a sentence and time the player. The bot would count up to 3 minutes for the player to complete the sentence.
-                        If there are any mistakes in the sentence, the player time would not be recorded. Else, the time would be recorded for that sentence and calculated for the words per minute (WPM).
-                        If the time is up, the sentence is automatically not be accepted. The bot would store the average WPM of the user who issued commands to the bot and print them to the server when asked.
+                     and add more quality-of-life changes to the website for better accessibility as I learned more about these languages.
+                    </li>
+                    <br>
+                    <li>I also have plans on creating a Discord Bot similar in feature to the online game TypeRacer. The bot would have access to a database that contains a few hundred sentences.
+                        Once the user issues a command to the bot, the bot would randomly select a sentence and then time the player. The bot would count for up to 3 minutes for the player to complete the sentence.
+                        If there are any mistakes in the sentence, the player's time would not be recorded. Else, the time would be recorded for that sentence and calculated for the words per minute (WPM).
+                        If the time is up, the sentence is automatically not accepted. The bot would store the average WPM of the user who issued commands to the bot and print them to the server when asked.
+                    </li>
+                    <br>
+                    <li>
+                        A long-term project I plan to do is to create a top-down story-based RPG game. The engine is planned to be either the Godot engine or the Unity Engine. I have a for towards Godot but plan to learn both in the future.
+                        I plan to learn more about the C# language so I would be able to create scripts for any game in either engine. Besides coding, I do have an interest in creating pixel art and model creation to help create my planned game and hope to
+                        learn more about game development in the future. 
                     </li>
                   </ul>
                   
